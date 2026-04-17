@@ -8,7 +8,8 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchTrips = async () => {
       try {
-        const res = await fetch('http://localhost:5000/get-trips');
+        const API_URL = "/backend";
+        const res = await fetch(`${API_URL}/get-trips`);
         if (res.ok) {
           const data = await res.json();
           setTrips(data);

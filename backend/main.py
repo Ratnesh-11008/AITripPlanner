@@ -25,7 +25,7 @@ def read_root():
 
 # Placeholder for upcoming routes
 from planner import router as planner_router
-app.include_router(planner_router)
+app.include_router(planner_router, prefix="/backend")
 
 if __name__ == "__main__":
     import uvicorn

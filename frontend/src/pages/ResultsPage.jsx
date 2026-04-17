@@ -10,7 +10,8 @@ const ResultsPage = () => {
 
   const handleSaveTrip = async () => {
     try {
-      const res = await fetch('http://localhost:5000/save-trip', {
+      const API_URL = "/backend";
+      const res = await fetch(`${API_URL}/save-trip`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(tripData)

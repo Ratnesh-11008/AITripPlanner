@@ -31,7 +31,8 @@ const TripPlannerPage = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:5000/generate-trip', {
+      const API_URL = "/backend";
+      const response = await fetch(`${API_URL}/generate-trip`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
