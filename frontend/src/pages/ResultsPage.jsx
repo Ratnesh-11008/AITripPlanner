@@ -10,7 +10,8 @@ const ResultsPage = () => {
 
   const handleSaveTrip = async () => {
     try {
-      const API_URL = "/backend";
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+      const API_URL = `${BASE_URL}/backend`;
       const res = await fetch(`${API_URL}/save-trip`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -8,7 +8,8 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchTrips = async () => {
       try {
-        const API_URL = "/backend";
+        const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+        const API_URL = `${BASE_URL}/backend`;
         const res = await fetch(`${API_URL}/get-trips`);
         if (res.ok) {
           const data = await res.json();
